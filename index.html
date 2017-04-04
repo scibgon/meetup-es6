@@ -1,0 +1,1007 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introducción a ES6</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/custom.css">
+
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+    <!--link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet"-->
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <!-- HOME -->
+				<section class="home">
+          <div class="cover-slides">
+            <header>
+              <div class="logos-company">
+                <a href="https://tantacom.com/" target="_blank" title="Abre en pestaña nueva"><img src="images/tanta_logo_azul.png" alt="Logo de Tanta Comunicación" class="logo-tanta"></a>
+                <a href="https://www.grupoonetec.com/" target="_blank" title="Abre en pestaña nueva"><img src="images/grupo-onetec.svg" alt="Logo de Grupo Onetec" class="logo-grupo-onetec"></a>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              <h1 class="main-title">Introducción a Ecmascript 6 (ES2015)</h1>
+            </div>
+
+            <footer class="rrss">
+              <ul>
+                <li class="tw"><a href="https://twitter.com/s_cibanto" target="_blank" title="Abre en pestaña nueva">@s_cibanto</a></li>
+                <li class="ln"><a href="https://es.linkedin.com/in/sergiocib" target="_blank" title="Abre en pestaña nueva">Sergio Cibanto</a></li>
+              </ul>
+            </footer>
+
+          </div>
+
+        </section>
+        
+        <!-- QUE ES ES6 -->
+
+        <section>
+
+          <section class="subhome">
+            <div class="content">
+              <div class="subhome-text">
+                <p class="title-subhome">ES6</p>
+                <h2 class="title-subhome-text">Introducción</h2>
+              </div>
+            </div>
+          </section>
+            
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">¿Qué es ES6?</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>ECMAScript es el estándar que define cómo debe de ser el lenguaje Javascript.</p>
+              <p>Javascript es una marca comercial propiedad de Oracle y antes de Sun Microsystems. Cuando los ingenieros de Netscape incorporaron un lenguaje de Scripting en su navegador decidieron, después de varios nombres, decidieron denominarlo Javascript bajo consentimiento de Sun.</p>
+              <p>Más tarde Netscape decidió proponer su lenguaje como estándar y el trabajo fue realizado por ECMA, dando lugar a ECMAScript. Por tanto, hoy Javascript sería un dialecto de ECMAScript.</p>
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Versiones</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              <div class="img">
+                <img src="images/history.png" alt="Fecha de publicación de versiones de Ecmascript" />
+              </div>
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Compatibilidad</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              <div class="img size2">
+                <a target="_blank" title="Abre en pestaña nueva" href="https://kangax.github.io/compat-table/es6/"><img src="images/compatibilidad.png" alt="Fragmento de tabla de compatibilidad de Ecmascript 6" /></a>
+                <p><a target="_blank" title="Abre en pestaña nueva" href="https://kangax.github.io/compat-table/es6/">Ir a la tabla de compatibilidad</a></p>
+              </div>
+            </div>
+
+          </section>
+
+        </section>
+
+        <section>
+          <section class="subhome">
+            <div class="content">
+              <div class="subhome-text">
+                <p class="title-subhome">ES6</p>
+                <h2 class="title-subhome-text">Utilizar ES6 hoy</h2>
+              </div>
+            </div>
+          </section>
+            
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Utilizar ES6 hoy</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+            
+            <div class="content">
+              <p>Actualmente el nivel de implementación es bastante alto tanto en los navegadores modernos como en nodejs.</p>
+              <p>Para asegurarnos un mejor soporte para navegadores más antiguos, tenemos que utilizar transpiladores como <a href="https://babeljs.io/">Babel</a>. Aún así, hay funcionalidades que ni siquiera con los traspiladores vamos a poder implementar.</p>
+              
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  //command line
+                  npm i -D babel-cli
+                  npm i -D babel-cli babel-preset-es2015
+                </code>
+              </pre>
+
+              <p>Crear archivo .babelrc con configuración</p>
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  {
+                    "presets": [ "es2015" ],
+                    "plugins": []
+                  }
+                </code>
+              </pre>
+
+            </div>
+
+
+          </section>
+
+        </section>
+
+        
+
+        <section>
+
+          <section class="subhome">
+            <div class="content">
+              <div class="subhome-text">
+                <p class="title-subhome">ES6</p>
+                <h2 class="title-subhome-text">Novedades</h2>
+              </div>
+            </div>
+          </section>
+            
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Let</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p><strong>let</strong> permite declarar variables limitando su alcance (scope) al bloque, declaración, o expresión donde se está usando. La diferencia con palabra reservada var es que se define una variable global o local en una función sin importar el ámbito del bloque.</p>
+
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  //ES5
+                  function varTest() {
+
+                    var x = 31;
+
+                    if (true) {
+                      var x = 71;  // misma variable!
+                      console.log(x);  // 71
+                    }
+
+                    console.log(x);  // 71
+                  }
+                </code>
+
+                <code class="atom-one-dark line-numbers">
+                  //ES6
+                  (function() {
+
+                    let x = 'Hola Santi';
+                    
+                    if(true) {
+                        let x = 'Hola Jose';
+                    }
+
+                    console.log(x);  //Hola Santi
+                  })();
+                </code>
+              </pre>
+              
+              <!--svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,500,700,900,100italic,300italic,400,400italic,500italic,700italic,900italic);</style>
+                </defs>
+                <rect x="106.592" y="74.469" width="365.977" height="18.356" style="fill: rgb(216, 216, 216);"/>
+                <ellipse cx="138.064" cy="81.849" rx="20" ry="20" style="fill: rgb(113, 117, 33);"/>
+                <text x="116.918" y="141.01" style="font-size: 36; font-family: Roboto; white-space: pre;">2001</text>
+                <defs>
+                  <style id="bx-google-fonts">@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic);</style>
+                </defs>
+                <ellipse cx="196.078" cy="81.353" rx="20" ry="20" style="fill: rgb(113, 117, 33);"/>
+              </svg-->
+
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Const</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>Las constantes presentan un ámbito de bloque tal y como lo hacen las variables definidas usando la instrucción let, con la particularidad de que el valor de una constante no puede cambiarse a través de la reasignación, y no se puede redeclarar. Es necesario inicializar la constante.</p>
+
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  const ALIAS; //Error
+
+                  const ALIAS = "El bicho";
+                  console.log(ALIAS) //El bicho
+
+                  ALIAS = "El niño de los Palacios"; //Error
+                </code>
+                
+              </pre>
+              
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Operador spread</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>El <strong>operador spread</strong> permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos (llamadas a funciones) o múltiples elementos (arrays literales)</p>
+
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  function dice(personaje, ...palabras) {
+                    return personaje + 'dice: ' + palabras.join('');
+                  }
+                  console.log(
+                    dice('CR7', 'soy','el','mejor','del','mundo.',' Siiiiiiiu' )
+                  );
+                </code>
+                
+              </pre>
+              
+              
+            </div>
+
+          </section>
+
+
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Template Strings</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>Son literales de texto que habilitan el uso de expresiones incrustadas. Es posible utilizar cadenas de texto de más de una línea, y funcionalidades de interpolación de cadenas de texto con ellas.</p>
+
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  function presentation(name, age){
+                    return `<div class="card">
+                            <p>Hola! Me llamo ${name} y tengo ${age + 3} años</p>
+                          </div>`;
+                  }
+
+                  presentation("Sergio", 26);
+
+                </code>
+                
+              </pre>
+              
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Estructuras de datos: Maps</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>Los Mapas son una estructura de datos que almacenan pares de clave (key) y valor (value), son similares a los objetos.</p>
+              
+              <pre>
+                <code>
+                  let map = new Map();
+
+                  map.set('foo', 123);
+
+                  let user = {userId: 1};
+
+                  map.set(user, 'Alex');
+
+                  map.get('foo'); //123
+
+                  map.get(user); //Alex
+
+                  map.size; //2
+
+                  map.has('foo'); //true
+
+                  map.delete('foo'); //true
+
+                  map.has('foo'); //false
+
+                  map.clear();
+
+                  map.size; //0
+
+                </code>
+              </pre>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Estructuras de datos: Maps vs Object</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <ul>
+                <li class="fragment">Un Objeto tiene un prototipo, por lo tanto hay claves por defecto.</li>
+                <li class="fragment">Las claves de un Objeto son Strings, mientras que pueden ser valores de cualquier tipo para un Mapa.</li>
+                <li class="fragment">Puede obtenerse fácilmente el tamaño de un Mapa mientras que debe mantenerse manualmente el trazado del tamaño de un Objeto.</li>
+              </ul>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Estructuras de datos: Maps vs Object</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>Estas preguntas pueden ayudarte a tomar una decisión:</p>
+              <ul>
+                <li>¿Las claves son desconocidas hasta el tiempo de ejecución? ¿Necesita localizarlas dinámicamente?</li>
+                <li class="fragment">¿Tienen todos los valores el mismo tipo, y pueden usarse de forma intercambiable?</li>
+                <li class="fragment">¿Necesita claves que no sean strings?</li>
+                <li class="fragment">¿Serán añadidos o eliminados a menudo los pares clave-valor?</li>
+                <li class="fragment">¿Tiene una cantidad arbitraria (fácilmente modificable) de pares clave-valor?</li>
+                <li class="fragment">¿Será iterada la colección?</li>
+              </ul>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Estructuras de datos: Set</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <p>Los sets son conjuntos de elementos no repetidos, que pueden ser tanto objetos, como valores primitivos.</p>
+              <p>Tiene métodos equivalentes a un Map, con la diferencia que utilizamos add para añadir elementos, y de que en un set las keys y los values son lo mismo, el valor del objeto. Del mismo modo, .entries() devuelve una pareja [value, value]</p>
+              
+              <pre>
+                <code>
+                  let set = new Set();
+
+                  set.add('foo');
+
+                  set.add('bar');
+
+                  set.size //2
+
+                  for(let item of set.entries()){
+                    console.log(item);
+                  }
+                  
+                  //["foo", "foo"]
+                  //["bar", "bar"]
+
+                </code>
+              </pre>
+              
+            </div>
+
+          </section>
+
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Párametros por defecto en funciones</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  function setBackgroundColor(elemento, color = '#c1c1c1') {
+                    elemento.style.backgroundColor = color;
+                  }
+
+                  setBackgroundColor( document.getElementById('header') );             // color configurado a '#c1c1c1'
+
+                  setBackgroundColor( document.getElementById('sidebar'), undefined ); // color configurado a '#c1c1c1'
+
+                  setBackgroundColor( document.getElementById('footer'), '#fabada' );  // color configurado a '#fabada'
+
+                </code>
+                
+              </pre>
+              
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Desestructuración</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <p>Las asignaciones de desestructuración te permiten asignar las propiedades de un arreglo o un objeto a variables, usando una sintaxis similar a la utilizada con valores literales</p>
+              
+              <div class="code-columns">
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    //ES5
+                    var someArray = [4, 8, 5];
+
+                    var first = someArray[0],
+                        second = someArray[1],
+                        third = someArray[2];
+
+
+                  </code>
+                  
+                </pre>
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    //ES6
+                    var someArray = [4, 8, 5];
+
+                    var [uno, dos, tres] = someArray;
+
+
+                  </code>
+                  
+                </pre>
+                
+              </div>
+              
+            </div>
+
+          </section>
+
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Clases</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <p>Son una mejora sintáctica sobre la herencia basada en prototipos de JavaScript. Proveen una sintaxis mucho más clara y simple para crear objetos y lidiar con la herencia.</p>
+              
+              <div class="code-columns">
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    //ES5
+
+                    //Class creation
+                    function Document(title, author, isPublished) {
+                      this.title = title;
+                      5 / 55
+                      this.author = author;
+                      this.isPublished = isPublished;
+                    }
+
+                    Document.prototype.publish = function publish() {
+                      this.isPublished = true;
+                    };
+
+                    //Class inherittance
+                    function Book(title, author, topic) {
+                      Document.call(this, title, author, true);
+                      this.topic = topic;
+                    }
+
+                    Book.prototype = Object.create(Document.prototype);
+
+
+                  </code>
+                  
+                </pre>
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    //ES6
+                    
+                    //Class creation
+                    class Document {
+                      constructor(title, author, isPublished) {
+                        this.title = title;
+                        this.author = author;
+                        this.isPublished = isPublished;
+                      }
+
+                      publish(){
+                        this.isPublished = true;
+                      }
+                    }
+
+                    //Class inherittance
+                    class Book extends Document{
+                      constructor(title, author, topic){
+                        super(title, author, true);
+                        this.topic = topic;
+                      }
+                    }
+
+                    let libro = new Book("Gomorra", "Roberto Saviano", "Novela");
+
+
+                  </code>
+                  
+                </pre>
+                
+              </div>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Módulos</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <p>Con export / import podemos tener un sistema de módulos en nuestra aplicación. En la actulidad ningún navegador a implementado la funcionalidad, pero la podemos utilizar incorporando transpiladores como Babel.</p>
+              
+              <div class="code-columns">
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    // module "my-module.js"
+                    export function cube(x) {
+                      return x * x * x;
+                    }
+
+                    const foo = Math.PI + Math.SQRT2;
+
+                    export { foo };
+
+                    //app.js
+                    import { cube, foo } from 'my-module';
+
+                    console.log( cube(3) ); // 27
+
+                    console.log( foo );    // 4.555806215962888
+
+
+                  </code>
+                  
+                </pre>
+                
+              </div>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Arrow Functions</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <p>La expresión de función flecha dispone de una sintaxis más corta comparada con la expresión de función convencional y no vincula su propio this, arguments, super, o new.target. Las funciones flecha siempre son anónimas. Estas funciones son funciones no relacionadas con métodos y no pueden ser usadas como constructores.</p>
+              
+              <div class="code-columns">
+                
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    //ES5
+                    
+                    //Ejemplo 1
+                    var sum = function(num1, num2) {
+                      return num1 + num2;
+                    };
+
+                    //Ejemplo 2
+                    var f = function(x){
+                      if( x % 2 === 0 ){
+                        return x;
+                      }else {
+                        return 0;
+                      }
+                      
+                    }
+
+                  </code>
+                  
+                </pre>
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    //ES6
+
+                    //Ejemplo 1
+                    var sum = (num1, num2) => { return num1 + num2; }
+                    sum(2,5); //7
+                    
+                    //Ejemplo 2
+                    const f = x => (x % 2) === 0 ? x : 0;
+
+                  </code>
+                  
+                </pre>
+                
+              </div>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Proxy</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <pre>
+                <code class="atom-one-dark line-numbers">
+                  //sintaxis
+                      
+                  let proxy = new Proxy(target, handler);
+                </code>
+              </pre>
+
+              <p>El objeto Proxy se utiliza para personalizar los comportamientos de operaciones básicas como:</p>
+
+              <ul>
+                <li class="fragment">Observación de propiedades</li>
+                <li class="fragment">Asignaciones</li>
+                <li class="fragment">Enumeraciones</li>
+                <li class="fragment">Funciones invocación</li>
+                <li class="fragment">etc</li>
+              </ul>
+
+              <p class="fragment">Esto lo hace interceptando las llamadas a dichas operaciones y manipulando la respuesta.</p>
+              <p class="fragment">Esta funcionalidad no es soportada por los transpiladores. Tiene que estar implementada por el navegador para poder utilizarla.</p>
+
+            </div>
+
+          </section>
+
+           <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Proxy: Métodos del handler</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <ul>
+                <li>handler.getPrototypeOf(target): Intercepta Object.getPrototypeOf.</li>
+                <li>handler.setPrototypeOf(target, prototype): Intercepta Object.setPrototypeOf.</li>
+                <li>handler.isExtensible(target): Intercepta Object.isExtensible.</li>
+                <li>handler.preventExtensions(target): Intercepta Object.preventExtensions.</li>
+                <li>handler.getOwnPropertyDescriptor(target, property): Intercepta Object.getOwnPropertyDescriptor.</li>
+                <li>handler.defineProperty(target, property, descriptor): Intercepta Object.defineProperty.</li>
+                <li>handler.has(target, property): Intercepta el operador in.</li>
+                <li>handler.get(target, property, receiver): Intercepta el getter de las propiedades.</li>
+                <li>handler.set(target, property, value, receiver): Intercepta el setter de las propiedades.</li>
+                <li>handler.deleteProperty(target, property): Intercepta el operador delete.</li>
+                <li>handler.ownKeys(target): Intercepta Object.getOwnPropertyNames.</li>
+                <li>handler.apply(target, thisArg, argumentsList): Intercepta la función call.</li>
+                <li>handler.construct(target, argumentsList, newTarget): Intercepta el operador new.</li>
+              </ul>
+
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Proxy: Ejemplo</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <div class="code-columns">
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    let validator = {
+                      set: function(obj, prop, value) {
+                        if (prop === 'age') {
+
+                          if (!Number.isInteger(value)) {
+                            throw new TypeError('The age is not an integer');
+                          }
+
+                          if (value > 200) {
+                            throw new RangeError('The age seems invalid');
+                          }
+                        }
+
+                        // The default behavior to store the value
+                        obj[prop] = value;
+                      }
+                    };
+
+                    let person = new Proxy({}, validator);
+
+                    person.age = 100;
+
+                    console.log(person.age); // 100
+
+                    person.age = 'young'; // Throws an exception
+
+                    person.age = 300; // Throws an exception
+
+                  </code>
+                  
+                </pre>
+                
+              </div>
+              
+            </div>
+
+          </section>
+
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Promesas</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+
+              <p>El objeto Promise (Promesa) es usado para computaciones asíncronas. Una promesa representa un valor que puede estar disponible ahora, en el futuro, o nunca.</p>
+              
+              <div class="code-columns">
+
+                <pre>
+                  <code class="atom-one-dark line-numbers">
+                    function hacerAlgoPromesa() {
+                      return new Promise( function(resolve, reject){
+                        console.log('hacer algo que ocupa un tiempo...');
+                        setTimeout(resolve, 3000);
+                      })
+                    }
+
+                    hacerAlgoPromesa()
+                      .then( function(resultado ) {
+                        console.log("la promesa terminó");
+                    })
+
+                  </code>
+                  
+                </pre>
+                
+              </div>
+              
+            </div>
+
+          </section>
+
+
+        </section>
+
+        <section>
+
+          <section class="subhome">
+            <div class="content">
+              <div class="subhome-text">
+                <p class="title-subhome">ES6</p>
+                <h2 class="title-subhome-text">Enlaces interesantes</h2>
+              </div>
+            </div>
+          </section>
+            
+          <section>
+
+            <header>
+              <div class="logos-company">
+                <h2 class="title-header">Enlaces</h2>
+              </div>
+              <div class="logo-meetup">
+                <span>{JS}</span>
+              </div>
+            </header>
+
+            <div class="content">
+              
+              <ul>
+                <li><a title="Abre en pestaña nueva" target="_blank" href="http://es6-features.org/#Constants">Features es6</a></li>
+                <li><a title="Abre en pestaña nueva" target="_blank" href="https://github.com/addyosmani/es6-equivalents-in-es5">ES6 equivalents in ES5 (Addy Osmani)</a></li>
+                <li><a title="Abre en pestaña nueva" target="_blank" href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN Javascript</a></li>
+                <li><a title="Abre en pestaña nueva" target="_blank" href="https://blog.enriqueoriol.com/2016/05/aprende-es6-guia-practica.html">Aprende ES6, Guía práctica (gratuita dejando email)</a></li>
+                
+              </ul>
+
+            </div>
+
+          </section>
+
+        </section>
+
+			</div>
+		</div>
+
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+        width: '100%',
+        height: '100%',
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+	</body>
+</html>
